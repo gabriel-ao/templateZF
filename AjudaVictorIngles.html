@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .demo {
+            border:2px sólido #000000;
+            border-collapse:separado;
+            border-spacing:2px;
+            padding:8px;
+        }
+        .demo th {
+            border:2px sólido #000000;
+            padding:8px;
+            background:#FFFFFF;
+        }
+        .demo td {
+            border:2px sólido #000000;
+            padding:8px;
+            background:#FF0000;
+        }
+        th, td {
+           border: 1px solid black;
+        }
+
+        .card {
+            display: flex; justify-content: start;
+        }
+    </style>
+</head>
+<body>
+    <div style="border: 1px solid black; width: 900px;">
+
+        <table class="demo" style="font-weight: normal; width: 100%;">
+            <tbody>
+                <tr>
+                    <th style="width: 15%;"><img src="./01_zf_logo2_3_2_748px.png" style="width: 100px;" alt="ZF" ><br></th>
+                    <th style="width: 85%;"><h1> RELATORIO DE VISITA </h1></th>
+                </tr>
+            </tbody>
+        </table>
+
+        <table class="demo" style="font-weight: normal; width: 100%;">
+            <tbody>
+                <tr>
+                    <th style="width: 15%;">Cliente:<br></th>
+                    <th style="width: 39%;"><span style="font-weight: normal; display: flex; justify-content: start;">@{outputs('Get_item')?['body/Clientes/Value']}</span></th>
+                    <th style="width: 6%;">Data:</th>
+                    <th style="width: 40%;"><span style="font-weight: normal; display: flex; justify-content: start;">@{outputs('Get_item')?['body/DatadaVisita']}</span></th>
+                </tr>
+                <tr>
+                    <th style="width: 15%;">Tipo Visita:</th>
+                    <th style="width: 39%;"><span style="font-weight: normal; display: flex; justify-content: start;">@{outputs('Get_item')?['body/TipodaVisita/Value']}</span></th>
+                    <th style="width: 6%;">RQE:<br></th>
+                    <th style="width: 40%;"><span style="font-weight: normal; display: flex; justify-content: start;">@{outputs('Get_item')?['body/RQE/Value']}</span></th>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <table class="demo" style="font-weight: normal; width: 100%;">
+            <tbody >
+                <tr>
+                    <th style="width: 20%;">Participantes:</th>
+                    <th style="width: 80%;"><span style="font-weight: normal; display: flex; justify-content: start;">@{outputs('Get_item')?['body/SEVIRAAQUIMEUPARCEIRO/Value']}</span></th>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+        <table class="demo" style="font-weight: normal; width: 100%;">
+            <tbody>
+
+                <tr>
+                    <th style="display: flex; justify-content: start;">Objetivo:<span style="font-weight: normal; height: 100px; ">@{outputs('Get_item')?['body/Objetivo']}</span></th>
+                </tr>
+                
+                <tr>
+                    <th style="display: flex; justify-content: start;">Resultado:<span style="font-weight: normal; height: 100px; ">@{outputs('Get_item')?['body/Resultado']}</span></th>
+                </tr>
+                
+                <tr>
+                    <th style="display: flex; justify-content: start;">Ações:<span style="font-weight: normal; height: 100px; ">@{outputs('Get_item')?['body/A_x00e7__x00f5_es']}</span></th>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+
+</html>
